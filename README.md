@@ -3,6 +3,19 @@ Project Report: Automating EC2 Deployment on AWS using Terraform
 Introduction:
 This project aims to automate the deployment of an EC2 instance on AWS using Terraform. Terraform is a powerful Infrastructure as Code (IaC) tool that allows us to define and provision infrastructure resources in a declarative manner.
 
+Created a git repository 
+Building-Scalable-Infrastructure-with-Terraform-Automating-EC2-Deployment-on-AWS
+
+├── main.tf
+
+├── variables.tf
+
+├── outputs.tf
+
+├── terraform.tfvars
+
+└── README.md
+
 I  Setting up the Environment
 
  1. Install Terraform: Ensure Terraform is installed on your machine. You can download Terraform from the official website and follow the installation instructions for your operating system.
@@ -79,6 +92,12 @@ main.tf: Contains the main Terraform configuration.
 variables.tf: Contains variable definitions.
 terraform.tfvars: Contains values for input variables (can be used to override default values).
 outputs.tf: Contains output definitions  can be used to display useful information after provisioning resources).
+
+
+Fututre scope:
+1. we can also centralize the terraform.tfstate file(which has sensitive information related to terraform) by storing it in S3 bucket and adding versioning to S3. reason : when a a one person  in organization excuted terraform ,  terraform.tfstate will  be available in his laptop. if he makes any changes to that file, developed terraform infrastructure code will not work. to avoid that we store it in S3. Versioning is when the second/third person runs the code terraform.tfstate file keeps changing, to keep track of the changes made by terraform into cloud we do versioning to S3.
+
+2. By using Dynamodb we can lock the terraform.tfstate file for avoiding the parallel execution.
 
 
 
