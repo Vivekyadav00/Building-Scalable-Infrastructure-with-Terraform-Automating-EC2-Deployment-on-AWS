@@ -49,6 +49,9 @@ III Understanding Terraform Configuration Files
  }
  provider "aws" block configures the AWS provider with the specified region.
  resource "aws_instance" block defines an EC2 instance resource. It specifies the AMI, instance type, and tags for the instance.
+
+ aws ec2 describe-images --owners 099720109477 --filters to find the ami of ubuntu "Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-*-*-amd64-server-*" --query "Images[*].[ImageId,Name]" --output table
+
   
   2. variables.tf: This file contains variable definitions used in the Terraform configuration:
 
