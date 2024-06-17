@@ -34,7 +34,7 @@ III Understanding Terraform Configuration Files
 
  1. main.tf: This file contains the main Terraform configuration for provisioning the EC2 instance. Let's break down the contents of main.tf:
 
-
+---
  provider "aws" {
   region = var.aws_region
  }
